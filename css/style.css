@@ -1,0 +1,539 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap");
+/*MOBILE FIRST*/
+/********************************************************
+                    CSS COMMUM
+********************************************************/
+/*déclaration de variables CSS*/
+/*
+ATTENTION : Les variables CSS ne sont pas prises en charge par les navigateurs IE ni Edge versions 14 et inférieures. 
+La version 15 de Edge gère partiellement les variables CSS. Depuis la version 16 Edge gère totalement les variables CSS.
+Firefox les gère depuis la version 31, Chrome depuis la version 49, Opera depuis la version 36 et Safari depuis la 9.3
+
+A NOTER que cela pose aussi des soucis pour le validateur CSS qui ne reconnait pas encore :root et les variables.
+*/
+:root {
+  --bg-header-footer: #96B011 url(../img/bg.jpg) no-repeat bottom;
+  --bg-section: #fff;
+}
+
+/*fin de déclaration de variables CSS*/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f2f2f2;
+  color: #666;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+section {
+  margin-bottom: 30px;
+  background: var(--bg-section);
+  padding: 30px;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4 {
+  color: #96B011;
+  font-family: "Amaranth", sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+main, footer {
+  line-height: 1.8;
+}
+
+.flex {
+  display: flex;
+}
+
+.price {
+  font-size: 2.4rem;
+}
+
+.btn {
+  background-color: #b09067;
+  color: #fff;
+  display: inline-block;
+  margin: 20px 0;
+  padding: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.btn:hover {
+  background-color: rgba(176, 144, 103, 0.75);
+}
+
+.img-left {
+  float: left;
+  margin-right: 15px;
+}
+
+.img-right {
+  float: right;
+  margin-left: 15px;
+}
+
+/********************************************************
+                            HEADER
+********************************************************/
+header {
+  background: var(--bg-header-footer);
+  color: #fff;
+  margin-bottom: 30px;
+  position: relative;
+}
+header > p {
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 0;
+  padding: 10px 0;
+  text-align: center;
+}
+header .ribbon {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  header .ribbon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+  }
+}
+header div.flex {
+  flex-direction: column;
+  padding: 15px 0;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  header div.flex {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+header div.flex a {
+  display: block;
+  margin-top: 100px;
+}
+@media screen and (min-width: 768px) {
+  header div.flex a {
+    margin-top: 0;
+    padding-left: 30px;
+  }
+}
+header p.panier {
+  margin: 0;
+  font-size: 3rem;
+  padding: 10px 30px;
+}
+@media screen and (max-width: 767px) {
+  header p.panier {
+    background-color: #96B011;
+    position: fixed;
+    top: 60px;
+    z-index: 1000;
+    border-radius: 0 50px 50px 0;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+  }
+  header p.panier span {
+    display: none;
+  }
+}
+header p.panier span {
+  font-size: 2rem;
+}
+header p.panier .fa-shopping-cart {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 15px;
+}
+header nav {
+  flex-direction: column;
+  padding-bottom: 20px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  header nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+header nav a {
+  color: #fff;
+  padding: 20px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+header nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/********************************************************
+                        MAIN INDEX
+********************************************************/
+/************************ INDEX ************************/
+@media screen and (max-width: 767px) {
+  .home .event {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home .event {
+    text-align: center;
+  }
+  .home .event strong {
+    color: #96B011;
+    font-family: "Amaranth", sans-serif;
+    font-size: 4rem;
+    margin: 0 0 20px;
+    display: block;
+    font-weight: normal;
+  }
+  .home .event .flexslider {
+    margin-top: 25px;
+  }
+}
+.home .choice-tea .flex {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media screen and (min-width: 1025px) {
+  .home .choice-tea .flex {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+.home .choice-tea .flex:hover figure {
+  opacity: 0.5;
+}
+.home .choice-tea .flex a {
+  text-decoration: none;
+  flex-basis: 50%;
+}
+.home .choice-tea .flex figure:hover {
+  opacity: 1;
+}
+.home .selection-tea .flex figure, .home .choice-tea .flex figure {
+  margin: 16px 0;
+  text-align: center;
+}
+.home .selection-tea .flex figure figcaption, .home .choice-tea .flex figure figcaption {
+  color: #666;
+  font-family: "Amaranth", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.home .selection-tea .flex figure figcaption strong, .home .choice-tea .flex figure figcaption strong {
+  font-weight: normal;
+}
+.home .selection-tea h2 {
+  font-size: 3.2rem;
+  margin-bottom: 0;
+}
+.home .selection-tea .flex {
+  flex-direction: column;
+}
+@media screen and (min-width: 1025px) {
+  .home .selection-tea .flex {
+    flex-direction: row;
+  }
+}
+.home .selection-tea .flex article {
+  text-align: center;
+  padding: 0 20px;
+}
+.home .selection-tea .flex h3 {
+  font-size: 2.5rem;
+  display: flex;
+}
+.home .selection-tea .flex h3::after, .home .selection-tea .flex h3::before {
+  content: "";
+  display: block;
+  border-top: 1px solid #96B011;
+  margin: 23px 10px 0;
+  flex: 1;
+}
+.home .selection-tea .flex figure img {
+  width: 100%;
+}
+
+/************************ LISTING-PRODUCT ************************/
+.listing section h2 {
+  font-size: 2.5rem;
+  display: flex;
+}
+.listing section h2::after {
+  content: "";
+  display: block;
+  border-top: 1px solid #96B011;
+  margin: 23px 10px 0;
+  flex: 1;
+}
+.listing section .flex {
+  flex-direction: column;
+}
+@media screen and (min-width: 1025px) {
+  .listing section .flex {
+    flex-direction: row;
+  }
+}
+.listing section .flex article {
+  text-align: center;
+  padding: 0 20px;
+}
+.listing section .flex article h3 {
+  color: #666;
+}
+.listing section .flex article img {
+  width: auto;
+}
+
+/************************ PRODUCT ************************/
+.product article {
+  text-align: center;
+}
+.product article h2 {
+  margin: 0;
+}
+.product article h2, .product article h3 {
+  color: #666;
+  margin-top: 0;
+}
+.product article a {
+  color: #96B011;
+  display: block;
+  text-decoration: none;
+}
+.product article img {
+  width: 100%;
+}
+.product article > .flex {
+  justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  .product article > .flex {
+    flex-direction: column;
+  }
+}
+.product article > .flex .fa-star {
+  color: #ffdc0f;
+}
+.product article > .flex .fa-star:last-of-type {
+  color: #666;
+}
+@media screen and (min-width: 768px) {
+  .product article > .flex > div:last-of-type {
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .product article > .flex:nth-of-type(2) {
+    margin: 30px 0;
+  }
+}
+.product article img {
+  flex-basis: 50%;
+}
+.product article form {
+  flex-basis: 45%;
+  margin-top: 30px;
+}
+.product article form select {
+  border: 1px solid #ccc;
+  color: #666;
+  padding: 10px;
+  width: 100%;
+}
+.product article form p {
+  border: 0;
+  color: #666;
+  font-family: "Amaranth", sans-serif;
+  font-size: 3.5rem;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+.product article form button {
+  border: 0;
+  display: inline-block;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .product article form button {
+    margin-top: 40px;
+  }
+}
+.product article form .fa-heart {
+  color: #e7877a;
+}
+@media screen and (min-width: 768px) {
+  .product article form p, .product article form a {
+    text-align: right;
+  }
+}
+.product article > p {
+  text-align: left;
+}
+.product article > p:nth-last-of-type(2), .product article > p:last-of-type {
+  font-weight: bold;
+}
+
+/************************ ABOUT ************************/
+.about section h2 {
+  color: #666;
+}
+.about section h2, .about section h3 {
+  text-align: left;
+}
+.about section .img-left, .about section .img-right {
+  margin-bottom: 25px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .about section .img-left, .about section .img-right {
+    margin-bottom: 0;
+    width: 50%;
+  }
+  .about section .img-left + p, .about section .img-right + p {
+    margin-top: 0;
+  }
+}
+.about section aside {
+  background-color: rgba(150, 176, 17, 0.2);
+  margin-top: 30px;
+  padding: 30px;
+  text-align: center;
+}
+@media screen and (min-width: 1024px) {
+  .about section aside {
+    display: flex;
+    justify-content: space-between;
+  }
+  .about section aside article {
+    padding: 0 15px;
+  }
+}
+.about section aside h3 {
+  color: #666;
+  text-align: center;
+}
+.about section aside img {
+  margin-top: 30px;
+  width: 80px;
+}
+
+/********************************************************
+                        FOOTER
+********************************************************/
+footer {
+  background: var(--bg-header-footer);
+}
+footer nav div {
+  display: flex;
+}
+footer nav a {
+  color: #fff;
+  opacity: 0.5;
+  text-decoration: none;
+}
+footer nav a:hover {
+  opacity: 1;
+}
+footer nav:first-of-type {
+  background-color: #879f0f;
+  padding: 10px 0;
+}
+footer nav:first-of-type div {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  footer nav:first-of-type div {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+footer nav:first-of-type a {
+  flex-basis: 50%;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 30px 0;
+}
+footer nav:first-of-type a .fas {
+  display: block;
+  font-size: 3.2rem;
+  margin: 0 0 15px;
+}
+footer nav:last-of-type div {
+  margin: 30px auto;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  footer nav:last-of-type div {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+footer nav:last-of-type ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+}
+footer nav:last-of-type ul li {
+  margin: 0 0 15px;
+}
+footer nav:last-of-type ul li strong {
+  color: #fff;
+  font-weight: normal;
+  margin: 35px 0;
+  text-transform: uppercase;
+  display: block;
+  font-size: 2rem;
+}
+footer nav + div {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #fff;
+  padding: 40px 30px 30px;
+  text-align: center;
+}
+footer nav + div img {
+  width: 60px;
+}
+footer nav + div a {
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */
